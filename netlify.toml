@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# The Next.js runtime handles SSR, the 70 pre-rendered /product/[slug] pages,
+# image optimisation and /shop (which renders on demand from searchParams).
+# Do NOT add a catch-all "/*" -> "/index.html" redirect here; that pattern is for
+# plain static SPAs and it would break the plugin's routing.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
